@@ -1,1 +1,12 @@
-python3 Signals.py
+import telebot
+
+BOT_TOKEN = "8669300906"
+
+bot = telebot.TeleBot(BOT_TOKEN)
+
+@bot.message_handler(commands=['start'])
+def start(message):
+    bot.reply_to(message, "Бот працює!")
+
+print("Бот запущений...")
+bot.infinity_polling()
